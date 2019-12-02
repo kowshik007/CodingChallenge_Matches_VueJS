@@ -1,0 +1,214 @@
+<template>
+<div>
+<h1>Match Details</h1>
+<v-row>
+<v-col
+          cols="12"
+          md="6"
+        >
+<b>Id:</b>
+</v-col>
+<v-col
+          cols="12"
+          md="6"
+        >
+{{info.data.id}}
+</v-col>
+</v-row>
+<v-row>
+<v-col
+          cols="12"
+          md="6"
+        >
+<b>Match:</b>
+</v-col>
+<v-col
+          cols="12"
+          md="6"
+        >
+{{info.data.team1}} vs {{info.data.team2}}
+</v-col>
+</v-row>
+<v-row>
+<v-col
+          cols="12"
+          md="6"
+        >
+<b>season:</b>
+</v-col>
+<v-col
+          cols="12"
+          md="6"
+        >
+{{info.data.season}}
+</v-col>
+</v-row>
+<v-row>
+<v-col
+          cols="12"
+          md="6"
+        >
+<b>city:</b>
+</v-col>
+<v-col
+          cols="12"
+          md="6"
+        >
+{{info.data.city}}
+</v-col>
+</v-row>
+<v-row>
+<v-col
+          cols="12"
+          md="6"
+        >
+<b>Held on:</b>
+</v-col>
+<v-col
+          cols="12"
+          md="6"
+        >
+{{info.data.date}}
+</v-col>
+</v-row>
+<v-row>
+<v-col
+          cols="12"
+          md="6"
+        >
+<b>Toss Winner:</b>
+</v-col>
+<v-col
+          cols="12"
+          md="6"
+        >
+{{info.data.toss_winner}}
+</v-col>
+</v-row>
+<v-row>
+<v-col
+          cols="12"
+          md="6"
+        >
+<b>Toss Decision:</b>
+</v-col>
+<v-col
+          cols="12"
+          md="6"
+        >
+{{info.data.toss_decision}}
+</v-col>
+</v-row>
+<v-row>
+<v-col
+          cols="12"
+          md="6"
+        >
+<b>Winner:</b>
+</v-col>
+<v-col
+          cols="12"
+          md="6"
+        >
+{{info.data.winner}}
+</v-col>
+</v-row>
+<v-row>
+<v-col
+          cols="12"
+          md="6"
+        >
+<b>Player Of Match:</b>
+</v-col>
+<v-col
+          cols="12"
+          md="6"
+        >
+{{info.data.player_of_match}}
+</v-col>
+</v-row>
+<v-row>
+<v-col
+          cols="12"
+          md="6"
+        >
+<b>Venue:</b>
+</v-col>
+<v-col
+          cols="12"
+          md="6"
+        >
+{{info.data.venue}}
+</v-col>
+</v-row>
+<v-row>
+<v-col
+          cols="12"
+          md="6"
+        >
+<b>Umpire1:</b>
+</v-col>
+<v-col
+          cols="12"
+          md="6"
+        >
+{{info.data.umpire1}}
+</v-col>
+</v-row>
+<v-row>
+<v-col
+          cols="12"
+          md="6"
+        >
+<b>Umpire2:</b>
+</v-col>
+<v-col
+          cols="12"
+          md="6"
+        >
+{{info.data.umpire2}}
+</v-col>
+</v-row>
+<v-row>
+<v-col
+          cols="12"
+          md="6"
+        >
+<b>Umpire3:</b>
+</v-col>
+<v-col
+          cols="12"
+          md="6"
+        >
+{{info.data.umpire3}}
+</v-col>
+</v-row>
+<v-row>
+<v-col
+          cols="12"
+          md="6"
+        >
+<v-btn  small color="primary" :to="'/matches/'+info.data.id+'/edit'">Edit</v-btn>
+</v-col>
+<v-col
+          cols="12"
+          md="6"
+        >
+<v-btn small color="error" :to="'/matches/'+info.data.id+'/delete'">Delete</v-btn>
+</v-col>
+</v-row>
+</div>
+</template>
+<script>
+import axios from 'axios'
+export default {
+  name: 'matches',
+  data: () => ({
+    info:null
+  }),
+  mounted(){
+		axios.get("http://localhost:3000/matches/"+this.$route.params.id+"?user_email=xseed@codingchallenge.com&user_token=W59hTDGHVysjgajyoK_5")
+		.then(response => (this.info = response))
+	}
+};
+</script>

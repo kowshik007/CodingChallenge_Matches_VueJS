@@ -1,0 +1,41 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: MyString
+  season: MyString
+  city: MyString
+  date: MyString
+  team1: MyString
+  team2: MyString
+  toss_winner: MyString
+  toss_decision: MyString
+  result: MyString
+  dl_applied: MyString
+  winner: MyString
+  win_by_runs: MyString
+  win_by_wickets: MyString
+  player_of_match: MyString
+  venue: MyString
+  umpire1: MyString
+  umpire2: MyString
+  umpire3: MyString
+
+two:
+  id: MyString
+  season: MyString
+  city: MyString
+  date: MyString
+  team1: MyString
+  team2: MyString
+  toss_winner: MyString
+  toss_decision: MyString
+  result: MyString
+  dl_applied: MyString
+  winner: MyString
+  win_by_runs: MyString
+  win_by_wickets: MyString
+  player_of_match: MyString
+  venue: MyString
+  umpire1: MyString
+  umpire2: MyString
+  umpire3: MyString
